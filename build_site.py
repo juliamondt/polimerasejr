@@ -164,8 +164,9 @@ def extract_section(content, section_id):
         return ''
     
     # Extract content (skip opening tag and closing tag)
-    # end points to the start of '</section>', so we use end to exclude it
-    section_content = content[start+18:end]  # 18 = len('<section id="home">')
+    # tag_end is the position of '>', so content starts at tag_end + 1
+    tag_end = content.find('>', start)
+    section_content = content[tag_end+1:end]
     # Update name from "Polímeras EJ" to "Polimerase EJ"
     section_content = section_content.replace('Polímeras EJ', 'Polimerase EJ')
     # Also handle percent-encoded URLs (Polímeras%20EJ -> Polimerase%20EJ)
