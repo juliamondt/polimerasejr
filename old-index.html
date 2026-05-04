@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Polímeras EJ – Consultoria especializada em rotulagem nutricional, rotulagem cosmética, minicursos e palestras para o setor farmacêutico e alimentício. Metodologia baseada em conhecimento técnico atualizado e valores adaptados à realidade de pequenas empresas.">
+<meta name="keywords" content="rotulagem nutricional, rotulagem cosmética, consultoria, minicursos, workshop, legislação, empresa júnior, cosmético, nutrição, artesanal, engajamento, vendas, segurança alimentar">
+<title>Polímeras EJ – Consultoria em Rotulagem & Cosmética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cinza: #545454;
+    --amarelo: #ffd52d;
+    --creme: #f8f3ed;
+    --amarelo-claro: #fef97f;
+    --preto: #252423;
+    --branco: #ffffff;
+    --sombra: rgba(37,36,35,0.10);
+    --sombra-forte: rgba(37,36,35,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--creme);
+    color: var(--preto);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    background: var(--preto);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 68px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 40px; height: 40px;
+    background: var(--amarelo);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 18px; color: var(--preto);
+    letter-spacing: -1px;
+  }
+  .nav-logo-text { color: #fff; font-weight: 700; font-size: 17px; line-height: 1.1; }
+  .nav-logo-text span { color: var(--amarelo); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--amarelo); }
+  .nav-cta {
+    background: var(--amarelo); color: var(--preto);
+    padding: 10px 22px; border-radius: 8px;
+    font-weight: 700; font-size: 14px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--amarelo-claro); transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; width: 100%;
+    background: var(--preto); padding: 20px 5% 28px;
+    flex-direction: column; gap: 6px; z-index: 999;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 16px; font-weight: 500; padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu a:hover { color: var(--amarelo); }
+  .mobile-cta-btn {
+    margin-top: 12px;
+    background: var(--amarelo); color: var(--preto) !important;
+    text-align: center; border-radius: 8px; padding: 14px !important;
+    font-weight: 700 !important; border-bottom: none !important;
+  }
+
+  /* ── SECTIONS COMUM ── */
+  section { padding: 96px 5%; }
+  .section-tag {
+    display: inline-block;
+    background: var(--amarelo); color: var(--preto);
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 40px;
+    margin-bottom: 16px;
+  }
+  h2.section-title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800; line-height: 1.15;
+    color: var(--preto); margin-bottom: 16px;
+  }
+  h2.section-title span { color: var(--cinza); }
+  .section-sub {
+    font-size: 17px; color: var(--cinza); line-height: 1.7;
+    max-width: 620px; margin-bottom: 52px;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--amarelo); color: var(--preto);
+    padding: 16px 32px; border-radius: 10px;
+    font-weight: 700; font-size: 16px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(255,213,45,0.35);
+  }
+  .btn-primary:hover { background: #f5c900; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,213,45,0.4); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--preto);
+    padding: 15px 30px; border-radius: 10px; border: 2px solid var(--preto);
+    font-weight: 700; font-size: 15px; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--preto); color: #fff; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: var(--preto);
+    display: flex; align-items: center;
+    padding-top: 68px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg-shape {
+    position: absolute; top: -80px; right: -120px;
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(255,213,45,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-bg-dots {
+    position: absolute; bottom: 40px; left: 5%;
+    opacity: 0.08; font-size: 200px; font-weight: 900; color: #fff;
+    user-select: none; line-height: 1; letter-spacing: -10px;
+  }
+  .hero-inner {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center; width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,213,45,0.12); border: 1px solid rgba(255,213,45,0.3);
+    color: var(--amarelo); font-size: 13px; font-weight: 600;
+    padding: 8px 16px; border-radius: 40px; margin-bottom: 24px;
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero-title {
+    font-size: clamp(34px, 5vw, 62px);
+    font-weight: 800; line-height: 1.1; color: #fff;
+    margin-bottom: 24px;
+  }
+  .hero-title .accent { color: var(--amarelo); }
+  .hero-desc {
+    font-size: 17px; color: rgba(255,255,255,0.65);
+    line-height: 1.75; margin-bottom: 36px; max-width: 500px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-wpp {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366; color: #fff;
+    padding: 16px 28px; border-radius: 10px;
+    font-weight: 700; font-size: 15px; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-wpp:hover { background: #1ebe5d; transform: translateY(-2px); }
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap;
+  }
+  .hero-stat { border-left: 3px solid var(--amarelo); padding-left: 16px; }
+  .hero-stat .num { font-size: 30px; font-weight: 800; color: #fff; line-height: 1; }
+  .hero-stat .lbl { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .hero-visual {
+    display: flex; flex-direction: column; gap: 16px; align-items: flex-end;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 24px 28px;
+    width: 100%; max-width: 380px;
+    animation: floatCard 6s ease-in-out infinite;
+  }
+  .hero-card:nth-child(2) { animation-delay: -3s; max-width: 340px; margin-right: 20px; }
+  @keyframes floatCard { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  .hero-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .hero-card-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .hero-card-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .hero-card-tag {
+    display: inline-block; margin-top: 12px;
+    background: rgba(255,213,45,0.15); color: var(--amarelo);
+    font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px;
+  }
+
+  /* ── SERVIÇOS STRIP ── */
+  .services-strip {
+    background: var(--amarelo);
+    padding: 20px 5%;
+    display: flex; align-items: center; gap: 32px; overflow: hidden;
+  }
+  .services-strip p {
+    white-space: nowrap; font-size: 14px; font-weight: 600; color: var(--preto);
+    opacity: 0.5;
+  }
+  .strip-items {
+    display: flex; gap: 32px; animation: marquee 25s linear infinite;
+  }
+  .strip-item {
+    display: flex; align-items: center; gap: 8px;
+    white-space: nowrap; font-size: 14px; font-weight: 600; color: var(--preto);
+  }
+  .strip-item::before { content: '◆'; font-size: 10px; opacity: 0.4; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ── SOBRE ── */
+  #sobre { background: var(--creme); }
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .sobre-visual {
+    position: relative;
+  }
+  .sobre-img-placeholder {
+    background: var(--preto);
+    border-radius: 20px;
+    aspect-ratio: 4/3;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 16px;
+    position: relative; overflow: hidden;
+  }
+  .sobre-img-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(255,213,45,0.2), transparent 60%);
+  }
+  .sobre-img-emoji { font-size: 64px; position: relative; z-index: 1; }
+  .sobre-img-text { color: rgba(255,255,255,0.4); font-size: 14px; font-weight: 500; position: relative; z-index: 1; }
+  .sobre-badge-float {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--amarelo); border-radius: 14px;
+    padding: 16px 22px;
+    box-shadow: 0 8px 30px rgba(255,213,45,0.4);
+  }
+  .sobre-badge-float .num { font-size: 28px; font-weight: 800; color: var(--preto); line-height: 1; }
+  .sobre-badge-float .txt { font-size: 12px; color: var(--preto); opacity: 0.7; }
+  .valores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .valor-card {
+    background: #fff; border-radius: 12px; padding: 20px;
+    border: 1.5px solid rgba(84,84,84,0.1);
+  }
+  .valor-card .icon { font-size: 22px; margin-bottom: 8px; }
+  .valor-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .valor-card p { font-size: 13px; color: var(--cinza); line-height: 1.5; }
+
+  /* ── POR QUE NÓS ── */
+  #diferenciais { background: var(--preto); color: #fff; }
+  #diferenciais h2.section-title { color: #fff; }
+  #diferenciais h2.section-title span { color: var(--amarelo); }
+  #diferenciais .section-sub { color: rgba(255,255,255,0.55); }
+  .diferenciais-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .dif-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 32px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .dif-card:hover { border-color: rgba(255,213,45,0.4); transform: translateY(-4px); }
+  .dif-icon {
+    width: 52px; height: 52px;
+    background: rgba(255,213,45,0.12); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+  }
+  .dif-card h3 { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .dif-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+  /* ── SERVIÇOS ── */
+  #servicos { background: var(--creme); }
+  .servicos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .servico-card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    border: 1.5px solid rgba(84,84,84,0.1);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .servico-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--amarelo);
+    transform: scaleX(0); transition: transform 0.3s;
+    transform-origin: left;
+  }
+  .servico-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px var(--sombra-forte); border-color: transparent; }
+  .servico-card:hover::after { transform: scaleX(1); }
+  .servico-num { font-size: 48px; font-weight: 800; color: var(--amarelo-claro); line-height: 1; margin-bottom: 12px; }
+  .servico-icon { font-size: 36px; margin-bottom: 16px; }
+  .servico-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .servico-card p { font-size: 14px; color: var(--cinza); line-height: 1.65; }
+  .servico-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .servico-tag {
+    background: var(--creme); color: var(--cinza);
+    font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px;
+    border: 1px solid rgba(84,84,84,0.15);
+  }
+
+  /* ── PORTFÓLIO ── */
+  #portfolio { background: #fff; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .case-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1.5px solid rgba(84,84,84,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .case-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px var(--sombra); }
+  .case-img {
+    height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 56px;
+    position: relative; overflow: hidden;
+  }
+  .case-img.c1 { background: linear-gradient(135deg, #ffd52d22, #ffd52d44); }
+  .case-img.c2 { background: linear-gradient(135deg, #54545422, #54545433); }
+  .case-img.c3 { background: linear-gradient(135deg, #fef97f44, #ffd52d33); }
+  .case-body { padding: 24px; background: #fff; }
+  .case-category {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--cinza);
+    margin-bottom: 8px;
+  }
+  .case-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .case-body p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+  .case-result {
+    margin-top: 16px;
+    background: var(--creme); border-radius: 10px; padding: 12px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .case-result .metric { font-size: 20px; font-weight: 800; color: var(--preto); }
+  .case-result .metric-lbl { font-size: 12px; color: var(--cinza); }
+
+  /* ── BLOG ── */
+  #blog { background: var(--creme); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .post-card {
+    background: #fff; border-radius: 16px; overflow: hidden;
+    border: 1.5px solid rgba(84,84,84,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .post-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px var(--sombra); }
+  .post-thumb {
+    height: 160px; display: flex; align-items: center; justify-content: center;
+    font-size: 48px;
+    background: var(--creme);
+  }
+  .post-body { padding: 22px; }
+  .post-cat {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--preto); background: var(--amarelo);
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+  }
+  .post-body h3 { font-size: 15px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+  .post-body p { font-size: 13px; color: var(--cinza); line-height: 1.6; }
+  .post-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; }
+  .post-date { font-size: 12px; color: var(--cinza); }
+  .post-read {
+    font-size: 12px; font-weight: 700; color: var(--preto);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .post-read::after { content: '→'; }
+
+  /* ── EQUIPE ── */
+  #equipe { background: #fff; }
+  .equipe-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+  .membro-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1.5px solid rgba(84,84,84,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .membro-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px var(--sombra); }
+  .membro-foto {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+    background: var(--creme);
+  }
+  .membro-info { padding: 20px 16px; background: #fff; }
+  .membro-info h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .membro-info .cargo { font-size: 12px; color: var(--cinza); margin-bottom: 10px; }
+  .membro-info .area {
+    display: inline-block;
+    background: var(--creme); color: var(--cinza);
+    font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px;
+  }
+
+  /* ── FAQ ── */
+  #faq { background: var(--creme); }
+  .faq-inner { max-width: 760px; margin: 0 auto; }
+  .faq-item {
+    background: #fff; border-radius: 14px; margin-bottom: 12px;
+    border: 1.5px solid rgba(84,84,84,0.1);
+    overflow: hidden;
+  }
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 24px; cursor: pointer;
+    font-weight: 600; font-size: 15px;
+    transition: background 0.2s;
+  }
+  .faq-question:hover { background: var(--creme); }
+  .faq-arrow {
+    width: 28px; height: 28px;
+    background: var(--creme); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+    transition: transform 0.3s, background 0.2s;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--amarelo); }
+  .faq-answer {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    padding: 0 24px;
+  }
+  .faq-answer-inner {
+    padding-bottom: 22px;
+    font-size: 14px; color: var(--cinza); line-height: 1.75;
+    border-top: 1px solid rgba(84,84,84,0.1); padding-top: 16px;
+  }
+  .faq-item.open .faq-answer { max-height: 500px; }
+
+  /* ── CONTATO ── */
+  #contato { background: var(--preto); }
+  #contato h2.section-title { color: #fff; }
+  #contato h2.section-title span { color: var(--amarelo); }
+  #contato .section-sub { color: rgba(255,255,255,0.5); }
+  .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .contato-info { }
+  .contato-item {
+    display: flex; gap: 16px; align-items: flex-start; margin-bottom: 28px;
+  }
+  .contato-icon {
+    width: 46px; height: 46px; flex-shrink: 0;
+    background: rgba(255,213,45,0.1); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .contato-item h4 { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+  .contato-item a, .contato-item p {
+    font-size: 15px; color: #fff; text-decoration: none; font-weight: 500;
+  }
+  .contato-item a:hover { color: var(--amarelo); }
+  .btn-wpp-big {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    background: #25D366; color: #fff;
+    padding: 18px 32px; border-radius: 12px; text-decoration: none;
+    font-weight: 700; font-size: 17px; margin-top: 32px;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+  .btn-wpp-big:hover { background: #1ebe5d; transform: translateY(-2px); }
+  .form-orcamento {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 36px;
+  }
+  .form-orcamento h3 { color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label {
+    display: block; font-size: 13px; font-weight: 600;
+    color: rgba(255,255,255,0.5); margin-bottom: 6px;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 10px;
+    padding: 13px 16px; color: #fff; font-family: 'Poppins', sans-serif;
+    font-size: 14px; transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--amarelo);
+  }
+  .form-group select { cursor: pointer; }
+  .form-group select option { background: var(--preto); }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .btn-submit {
+    width: 100%; background: var(--amarelo); color: var(--preto);
+    padding: 16px; border: none; border-radius: 10px;
+    font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700;
+    cursor: pointer; margin-top: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-submit:hover { background: var(--amarelo-claro); transform: translateY(-1px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1a1918; padding: 48px 5% 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  .footer-brand p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; margin-top: 14px; max-width: 280px; }
+  .footer-col h4 { color: #fff; font-size: 13px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.04em; }
+  .footer-col a { display: block; color: rgba(255,255,255,0.4); text-decoration: none; font-size: 13px; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--amarelo); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo .icon {
+    width: 32px; height: 32px; background: var(--amarelo); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px; color: var(--preto);
+  }
+  .footer-logo span { color: #fff; font-weight: 700; font-size: 15px; }
+
+  /* ── FLOATING WPP ── */
+  .wpp-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 58px; height: 58px;
+    background: #25D366; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    text-decoration: none;
+    transition: transform 0.2s;
+    animation: pulse-wpp 3s ease-in-out infinite;
+  }
+  .wpp-float:hover { transform: scale(1.1); }
+  @keyframes pulse-wpp {
+    0%,100%{ box-shadow: 0 4px 20px rgba(37,211,102,0.5) }
+    50%{ box-shadow: 0 4px 40px rgba(37,211,102,0.8) }
+  }
+  .wpp-float svg { width: 32px; height: 32px; fill: #fff; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .sobre-grid { grid-template-columns: 1fr; }
+    .sobre-visual { order: -1; }
+    .diferenciais-grid { grid-template-columns: 1fr 1fr; }
+    .servicos-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .equipe-grid { grid-template-columns: 1fr 1fr; }
+    .contato-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 72px 5%; }
+    .diferenciais-grid { grid-template-columns: 1fr; }
+    .servicos-grid { grid-template-columns: 1fr; }
+    .equipe-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .valores-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FLOATING WPP -->
+<a href="https://wa.me/5541998630132?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20da%20Polímeras%20EJ." class="wpp-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">P<span style="color:#252423;font-size:12px">EJ</span></div>
+    <div class="nav-logo-text">Polímeras <span>EJ</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#equipe">Equipe</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Solicitar Proposta</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre" onclick="closeMobile()">Sobre</a>
+  <a href="#servicos" onclick="closeMobile()">Serviços</a>
+  <a href="#portfolio" onclick="closeMobile()">Portfólio</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#equipe" onclick="closeMobile()">Equipe</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#contato" onclick="closeMobile()">Contato</a>
+  <a href="#contato" class="mobile-cta-btn" onclick="closeMobile()">Solicitar Proposta</a>
+</div>
+
+<!-- ── HOME ── -->
+<section id="home">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-dots">EJ</div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Consultoria Especializada · Curitiba, PR</div>
+      <h1 class="hero-title">
+        Sua empresa na<br>
+        <span class="accent">conformidade,</span><br>
+        sua marca no mercado.
+      </h1>
+      <p class="hero-desc">
+        Consultoria especializada em rotulagem nutricional e cosmética, minicursos e palestras para quem quer vender com segurança e respaldo legal — com rigor técnico e valores adaptados à realidade de pequenas empresas.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contato" class="btn-primary">
+          ✉ Solicitar Proposta
+        </a>
+        <a href="https://wa.me/5541998630132?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Polímeras%20EJ." class="btn-wpp" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">+30</div>
+          <div class="lbl">Projetos realizados</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">6</div>
+          <div class="lbl">Serviços especializados</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">100%</div>
+          <div class="lbl">Embasamento técnico</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">🏷️</div>
+        <div class="hero-card-title">Rotulagem dentro da lei</div>
+        <div class="hero-card-desc">Adequação à RDC 429 e legislação ANVISA vigente para alimentos e cosméticos.</div>
+        <span class="hero-card-tag">Rotulagem Nutricional</span>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">💄</div>
+        <div class="hero-card-title">Cosméticos artesanais prontos para venda</div>
+        <div class="hero-card-desc">Minicursos práticos: lip balm, lip oil, cremes, velas e muito mais.</div>
+        <span class="hero-card-tag">Minicursos & Workshops</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP DE SERVIÇOS -->
+<div class="services-strip">
+  <p>Serviços</p>
+  <div class="strip-items">
+    <span class="strip-item">Rotulagem Nutricional</span>
+    <span class="strip-item">Rotulagem Cosmética</span>
+    <span class="strip-item">Consultoria em Legislação</span>
+    <span class="strip-item">Minicursos Cosméticos</span>
+    <span class="strip-item">Implementação de POP</span>
+    <span class="strip-item">Palestras Técnicas</span>
+    <span class="strip-item">Rotulagem Nutricional</span>
+    <span class="strip-item">Rotulagem Cosmética</span>
+    <span class="strip-item">Consultoria em Legislação</span>
+    <span class="strip-item">Minicursos Cosméticos</span>
+    <span class="strip-item">Implementação de POP</span>
+    <span class="strip-item">Palestras Técnicas</span>
+  </div>
+</div>
+
+<!-- ── SOBRE ── -->
+<section id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-visual">
+      <div class="sobre-img-placeholder">
+        <div class="sobre-img-emoji">🔬</div>
+        <div class="sobre-img-text">Especialistas que transformam conhecimento em resultado</div>
+      </div>
+      <div class="sobre-badge-float">
+        <div class="num">+30</div>
+        <div class="txt">Projetos entregues</div>
+      </div>
+    </div>
+    <div class="sobre-content">
+      <span class="section-tag">Sobre Nós</span>
+      <h2 class="section-title">Especialistas que entendem<br><span>o seu setor por dentro</span></h2>
+      <p style="font-size:15px;color:var(--cinza);line-height:1.75;margin-bottom:24px;">
+        A Polímeras EJ é uma consultoria especializada em rotulagem, legislação sanitária e capacitação para os setores alimentício, cosmético e farmacêutico. Nossa equipe é formada por profissionais com formação técnica sólida nas áreas de Farmácia, Química e Engenharia de Alimentos — e atuação prática em projetos reais.
+      </p>
+      <p style="font-size:15px;color:var(--cinza);line-height:1.75;margin-bottom:32px;">
+        Nossa missão é oferecer consultoria técnica de qualidade com metodologias atualizadas e valores competitivos, pensados para a realidade de quem está construindo o próprio negócio — sem burocracia desnecessária e com atenção personalizada em cada projeto.
+      </p>
+      <div class="valores-grid">
+        <div class="valor-card">
+          <div class="icon">⚖️</div>
+          <h4>Conformidade Legal</h4>
+          <p>Trabalho sempre alinhado à legislação ANVISA vigente.</p>
+        </div>
+        <div class="valor-card">
+          <div class="icon">💡</div>
+          <h4>Metodologia Atualizada</h4>
+          <p>Conhecimento técnico rigoroso e continuamente atualizado.</p>
+        </div>
+        <div class="valor-card">
+          <div class="icon">🤝</div>
+          <h4>Atenção Personalizada</h4>
+          <p>Cada projeto tratado de forma única, do diagnóstico à entrega.</p>
+        </div>
+        <div class="valor-card">
+          <div class="icon">🎯</div>
+          <h4>Foco em Resultado</h4>
+          <p>Entregamos soluções práticas que geram impacto real no negócio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIFERENCIAIS ── -->
+<section id="diferenciais">
+  <div style="text-align:center;margin-bottom:16px;">
+    <span class="section-tag">Por que nos escolher?</span>
+  </div>
+  <h2 class="section-title" style="text-align:center;">O que nos torna a escolha certa<br><span>para o seu negócio</span></h2>
+  <p class="section-sub" style="margin:0 auto 52px;text-align:center;">
+    Expertise técnica, processos estruturados e valores competitivos — pensados para quem está crescendo.
+  </p>
+  <div class="diferenciais-grid">
+    <div class="dif-card">
+      <div class="dif-icon">💰</div>
+      <h3>Valores competitivos e acessíveis</h3>
+      <p>Oferecemos serviços com alto padrão técnico a valores competitivos e adaptados à realidade de pequenas empresas — sem abrir mão da qualidade em nenhuma etapa do projeto.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">🔬</div>
+      <h3>Formação técnica especializada</h3>
+      <p>Nossa equipe é composta por profissionais com sólida formação nas áreas de Farmácia, Engenharia de Alimentos e Química, com vivência prática em rotulagem, legislação e cosmetologia.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">📋</div>
+      <h3>Legislação sempre atualizada</h3>
+      <p>Trabalhamos com as normativas mais recentes da ANVISA, garantindo que rótulos e documentos estejam em total conformidade com as exigências legais vigentes.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">🌱</div>
+      <h3>Foco em quem está crescendo</h3>
+      <p>Entendemos as dores de quem está construindo o próprio negócio: burocracia, dificuldade de vendas e processos travados. Estamos aqui para destravar cada etapa com você.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">🎯</div>
+      <h3>Atendimento personalizado</h3>
+      <p>Nada de soluções genéricas. Cada cliente recebe uma análise individualizada, proposta sob medida e acompanhamento próximo durante todo o projeto.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">🚀</div>
+      <h3>Agilidade sem perder o rigor</h3>
+      <p>Processos estruturados que garantem entregas dentro do prazo, com a qualidade técnica que o seu produto e o mercado exigem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVIÇOS ── -->
+<section id="servicos">
+  <span class="section-tag">Serviços</span>
+  <h2 class="section-title">Tudo que sua empresa<br><span>precisa para crescer</span></h2>
+  <p class="section-sub">Da rotulagem à capacitação da equipe, oferecemos soluções completas para o setor alimentício, cosmético e farmacêutico.</p>
+  <div class="servicos-grid">
+
+    <div class="servico-card">
+      <div class="servico-icon">🏷️</div>
+      <h3>Rotulagem Nutricional</h3>
+      <p>Elaboração completa de rótulos nutricionais para alimentos, seguindo a RDC 429/2020 e demais normativas vigentes da ANVISA. Indicado para marmitas, produtos artesanais e industrializados.</p>
+      <div class="servico-tags">
+        <span class="servico-tag">RDC 429/2020</span>
+        <span class="servico-tag">ANVISA</span>
+        <span class="servico-tag">Alimentos</span>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">💄</div>
+      <h3>Rotulagem Cosmética</h3>
+      <p>Adequação de rótulos para cosméticos artesanais e industrializados conforme a RDC 07/2015 e demais regulamentos da ANVISA para produtos de higiene pessoal e cosméticos.</p>
+      <div class="servico-tags">
+        <span class="servico-tag">RDC 07/2015</span>
+        <span class="servico-tag">Cosméticos</span>
+        <span class="servico-tag">Conformidade</span>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">📊</div>
+      <h3>Consultoria de Rotulagem</h3>
+      <p>Análise e orientação estratégica para adequação dos seus processos de rotulagem, seja para alimentos ou cosméticos. Inclui diagnóstico, recomendações e suporte na implementação.</p>
+      <div class="servico-tags">
+        <span class="servico-tag">Diagnóstico</span>
+        <span class="servico-tag">Estratégia</span>
+        <span class="servico-tag">Suporte</span>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">🧴</div>
+      <h3>Minicursos Cosméticos</h3>
+      <p>Workshops práticos para fabricação de produtos cosméticos artesanais: lip balm, lip oil, cremes hidratantes, velas aromáticas e muito mais. Ideal para engajamento de equipes e empreendedores.</p>
+      <div class="servico-tags">
+        <span class="servico-tag">Lip Balm</span>
+        <span class="servico-tag">Cremes</span>
+        <span class="servico-tag">Velas</span>
+        <span class="servico-tag">Lip Oil</span>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">📋</div>
+      <h3>Implementação de POP</h3>
+      <p>Desenvolvimento e implantação de Procedimentos Operacionais Padronizados (POPs) para garantir qualidade, rastreabilidade e conformidade nos processos produtivos da sua empresa.</p>
+      <div class="servico-tags">
+        <span class="servico-tag">Qualidade</span>
+        <span class="servico-tag">Processos</span>
+        <span class="servico-tag">Rastreabilidade</span>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-icon">🎤</div>
+      <h3>Palestras Técnicas</h3>
+      <p>Palestras educativas voltadas ao setor farmacêutico e alimentício, abordando legislação, boas práticas, segurança alimentar e tendências do mercado. Perfeito para capacitar sua equipe.</p>
+      <div class="servico-tags">
+        <span class="servico-tag">Farmacêutico</span>
+        <span class="servico-tag">Alimentício</span>
+        <span class="servico-tag">Capacitação</span>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <a href="#contato" class="btn-primary">Solicitar Proposta para o seu Serviço</a>
+  </div>
+</section>
+
+<!-- ── PORTFÓLIO ── -->
+<section id="portfolio">
+  <span class="section-tag">Portfólio & Cases</span>
+  <h2 class="section-title">Projetos que<br><span>geram resultado</span></h2>
+  <p class="section-sub">Veja como ajudamos microempreendedores e empresas a regularizarem seus produtos e capacitarem suas equipes.</p>
+  <div class="portfolio-grid">
+
+    <div class="case-card">
+      <div class="case-img c1">🥗</div>
+      <div class="case-body">
+        <div class="case-category">Rotulagem Nutricional</div>
+        <h3>Marmitas Saudáveis – Curitiba/PR</h3>
+        <p>Empreendedora de marmitas fitness precisava regularizar 12 produtos para vender em apps de delivery. Realizamos a rotulagem completa conforme RDC 429/2020.</p>
+        <div class="case-result">
+          <div>
+            <div class="metric">12</div>
+            <div class="metric-lbl">produtos regularizados</div>
+          </div>
+          <div style="margin-left:auto;font-size:13px;color:var(--cinza);">Entrega em 15 dias</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-img c2">💄</div>
+      <div class="case-body">
+        <div class="case-category">Rotulagem Cosmética + Minicurso</div>
+        <h3>Ateliê de Cosméticos Naturais – PR</h3>
+        <p>Produtora artesanal de cosméticos queria expandir vendas. Realizamos rotulagem cosmética e workshop de lip oil para capacitar a equipe de 8 pessoas.</p>
+        <div class="case-result">
+          <div>
+            <div class="metric">8</div>
+            <div class="metric-lbl">colaboradores capacitados</div>
+          </div>
+          <div style="margin-left:auto;font-size:13px;color:var(--cinza);">+40% engajamento</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-img c3">🏭</div>
+      <div class="case-body">
+        <div class="case-category">Implementação de POP</div>
+        <h3>Indústria Alimentícia – Pequeno Porte</h3>
+        <p>Empresa familiar do setor de alimentos processados precisava implantar POPs para auditoria da vigilância sanitária. Implantamos 6 procedimentos em 30 dias.</p>
+        <div class="case-result">
+          <div>
+            <div class="metric">6</div>
+            <div class="metric-lbl">POPs implementados</div>
+          </div>
+          <div style="margin-left:auto;font-size:13px;color:var(--cinza);">Auditoria aprovada</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <a href="#contato" class="btn-outline">Quero um projeto como esse</a>
+  </div>
+</section>
+
+<!-- ── BLOG ── -->
+<section id="blog">
+  <span class="section-tag">Blog & Conteúdo</span>
+  <h2 class="section-title">Conhecimento que<br><span>transforma seu negócio</span></h2>
+  <p class="section-sub">Artigos técnicos e práticos sobre rotulagem, legislação, cosméticos e muito mais — escritos por quem entende do assunto.</p>
+  <div class="blog-grid">
+
+    <div class="post-card">
+      <div class="post-thumb">🏷️</div>
+      <div class="post-body">
+        <span class="post-cat">Rotulagem</span>
+        <h3>RDC 429/2020: O que mudou na rotulagem nutricional e o que você precisa saber agora</h3>
+        <p>A nova resolução trouxe mudanças significativas na forma como as informações nutricionais devem ser apresentadas. Entenda o impacto no seu produto.</p>
+        <div class="post-meta">
+          <span class="post-date">Março 2025</span>
+          <a href="#" class="post-read">Ler artigo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-thumb">🧴</div>
+      <div class="post-body">
+        <span class="post-cat">Cosméticos</span>
+        <h3>Como vender cosméticos artesanais de forma legal: guia completo para empreendedores</h3>
+        <p>Saiba quais documentos, registros e adequações são necessários para comercializar seus produtos cosméticos com segurança jurídica.</p>
+        <div class="post-meta">
+          <span class="post-date">Fevereiro 2025</span>
+          <a href="#" class="post-read">Ler artigo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-thumb">📋</div>
+      <div class="post-body">
+        <span class="post-cat">Boas Práticas</span>
+        <h3>O que é um POP e por que sua microempresa alimentícia não pode ficar sem um</h3>
+        <p>Procedimentos Operacionais Padronizados não são burocracias — são ferramentas de qualidade que protegem seu negócio e seus clientes.</p>
+        <div class="post-meta">
+          <span class="post-date">Janeiro 2025</span>
+          <a href="#" class="post-read">Ler artigo</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:48px;">
+    <a href="#" class="btn-outline">Ver todos os artigos</a>
+  </div>
+</section>
+
+<!-- ── EQUIPE ── -->
+<section id="equipe">
+  <div style="text-align:center;">
+    <span class="section-tag">Nossa Equipe</span>
+    <h2 class="section-title" style="text-align:center;">As pessoas por trás<br><span>dos seus resultados</span></h2>
+    <p class="section-sub" style="margin:0 auto 52px;text-align:center;">Estudantes apaixonados pelo que fazem, com supervisão de professores referência em suas áreas.</p>
+  </div>
+  <div class="equipe-grid">
+    <div class="membro-card">
+      <div class="membro-foto">👩‍🔬</div>
+      <div class="membro-info">
+        <h3>Ana Clara S.</h3>
+        <p class="cargo">Diretora Executiva</p>
+        <span class="area">Farmácia</span>
+      </div>
+    </div>
+    <div class="membro-card">
+      <div class="membro-foto">👨‍🎓</div>
+      <div class="membro-info">
+        <h3>Pedro H. Lima</h3>
+        <p class="cargo">Gerente de Projetos</p>
+        <span class="area">Eng. Alimentos</span>
+      </div>
+    </div>
+    <div class="membro-card">
+      <div class="membro-foto">👩‍💼</div>
+      <div class="membro-info">
+        <h3>Mariana Torres</h3>
+        <p class="cargo">Consultora de Rotulagem</p>
+        <span class="area">Nutrição</span>
+      </div>
+    </div>
+    <div class="membro-card">
+      <div class="membro-foto">🧑‍🏫</div>
+      <div class="membro-info">
+        <h3>Prof. Dr. Roberto A.</h3>
+        <p class="cargo">Orientador Técnico</p>
+        <span class="area">Farmácia Industrial</span>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:32px;font-size:14px;color:var(--cinza);">
+    Interessado em fazer parte da equipe? <a href="mailto:negocios@polimerasejr.com" style="color:var(--preto);font-weight:600;">Fale conosco</a>
+  </p>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div style="text-align:center;">
+    <span class="section-tag">Dúvidas Frequentes</span>
+    <h2 class="section-title" style="text-align:center;">Perguntas que todo<br><span>cliente faz antes de contratar</span></h2>
+  </div>
+  <div class="faq-inner" style="margin-top:48px;">
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Como a Polímeras EJ garante a qualidade técnica dos seus projetos?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Nossa equipe é formada por profissionais com formação técnica nas áreas de Farmácia, Engenharia de Alimentos e Química, com atuação direta em projetos de rotulagem, legislação sanitária e cosmetologia. Cada entrega passa por revisão criteriosa para garantir conformidade com as normativas vigentes — e todo o processo é conduzido com atenção individualizada ao cliente.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Meu produto artesanal realmente precisa de rotulagem?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Sim! Qualquer produto alimentício ou cosmético comercializado no Brasil precisa seguir as normas da ANVISA quanto à rotulagem. Vender produtos sem rotulagem adequada pode resultar em multas, interdição e até ações judiciais. A boa notícia é que podemos resolver isso de forma rápida e com custo acessível.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Qual é o prazo médio para entrega de uma rotulagem?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          O prazo varia conforme a complexidade do projeto e a quantidade de produtos. Em geral, projetos simples de rotulagem nutricional são entregues em 7 a 15 dias úteis. Projetos mais complexos, como implementação de POPs ou consultoria ampla, podem levar de 3 a 6 semanas. O prazo exato é definido na proposta após análise do seu caso.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Os valores de vocês são acessíveis para pequenas empresas?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Sim. Trabalhamos com valores competitivos e adaptados à realidade de micro e pequenos empreendedores, sem abrir mão do rigor técnico. Acreditamos que acesso a uma consultoria especializada não deve ser um privilégio de grandes empresas. Após entender o seu projeto, elaboramos uma proposta personalizada que respeita o seu momento de negócio.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Vocês atendem empresas fora do Paraná?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Sim! A maioria dos nossos serviços pode ser realizada de forma totalmente remota. Atendemos clientes em todo o Brasil. O processo é simples: você nos envia as informações do produto, realizamos a análise técnica e entregamos tudo por e-mail e/ou reuniões online.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        O minicurso de cosméticos é para iniciantes ou preciso ter experiência?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Nossos minicursos são desenvolvidos para todos os níveis! Tanto iniciantes quanto quem já tem alguma experiência na produção de cosméticos artesanais podem participar. O conteúdo é prático, didático e voltado tanto para quem quer empreender quanto para empresas que querem engajar e capacitar equipes.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Como funciona o processo para solicitar uma proposta?
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          É simples! Você pode preencher o formulário nesta página, nos enviar um e-mail para negocios@polimerasejr.com ou entrar em contato pelo WhatsApp. Após o contato inicial, agendamos uma conversa para entender sua necessidade e enviamos uma proposta personalizada em até 48 horas úteis.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTATO ── -->
+<section id="contato">
+  <span class="section-tag">Contato & Proposta</span>
+  <h2 class="section-title">Vamos trabalhar<br><span>juntos?</span></h2>
+  <p class="section-sub">Preencha o formulário ou fale direto pelo WhatsApp. Respondemos em até 24 horas úteis com uma proposta personalizada para o seu negócio.</p>
+  <div class="contato-grid">
+    <div class="contato-info">
+      <div class="contato-item">
+        <div class="contato-icon">📧</div>
+        <div>
+          <h4>E-mail</h4>
+          <a href="mailto:negocios@polimerasejr.com">negocios@polimerasejr.com</a>
+        </div>
+      </div>
+      <div class="contato-item">
+        <div class="contato-icon">📱</div>
+        <div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/5541998630132" target="_blank">+55 (41) 99863-0132</a>
+        </div>
+      </div>
+      <div class="contato-item">
+        <div class="contato-icon">📍</div>
+        <div>
+          <h4>Atendimento</h4>
+          <p>Curitiba, PR · Atendemos todo o Brasil de forma remota</p>
+        </div>
+      </div>
+      <a href="https://wa.me/5541998630132?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20da%20Polímeras%20EJ." class="btn-wpp-big" target="_blank">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar pelo WhatsApp agora
+      </a>
+      <p style="margin-top:24px;font-size:13px;color:rgba(255,255,255,0.3);line-height:1.6;">
+        Respondemos em até 24 horas úteis.<br>Proposta personalizada sem compromisso.
+      </p>
+    </div>
+    <div class="form-orcamento">
+      <h3>Solicitar Proposta</h3>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome completo *</label>
+            <input type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp *</label>
+            <input type="tel" placeholder="(41) 99999-9999" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-mail *</label>
+          <input type="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Empresa / Negócio</label>
+          <input type="text" placeholder="Nome da sua empresa ou negócio">
+        </div>
+        <div class="form-group">
+          <label>Serviço de interesse *</label>
+          <select required>
+            <option value="">Selecione um serviço...</option>
+            <option>Rotulagem Nutricional</option>
+            <option>Rotulagem Cosmética</option>
+            <option>Consultoria de Rotulagem Nutricional</option>
+            <option>Consultoria de Rotulagem Cosmética</option>
+            <option>Minicurso / Workshop Cosmético</option>
+            <option>Implementação de POP</option>
+            <option>Palestra Técnica</option>
+            <option>Mais de um serviço</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Descreva brevemente sua necessidade</label>
+          <textarea placeholder="Conte um pouco sobre o seu produto, quantas SKUs, setor de atuação..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Enviar Solicitação de Proposta →</button>
+        <p id="formMsg" style="display:none;margin-top:12px;text-align:center;font-size:14px;color:#25D366;font-weight:600;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="icon">P<span style="font-size:10px;color:#252423">EJ</span></div>
+        <span>Polímeras EJ</span>
+      </div>
+      <p>Consultoria especializada em rotulagem, legislação e capacitação para os setores alimentício, cosmético e farmacêutico. Rigor técnico e valores adaptados à realidade de pequenas empresas.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="#home">Home</a>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#blog">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <a href="#servicos">Rotulagem Nutricional</a>
+      <a href="#servicos">Rotulagem Cosmética</a>
+      <a href="#servicos">Minicursos</a>
+      <a href="#servicos">POPs</a>
+      <a href="#servicos">Palestras</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="mailto:negocios@polimerasejr.com">negocios@polimerasejr.com</a>
+      <a href="https://wa.me/5541998630132" target="_blank">+55 (41) 99863-0132</a>
+      <a href="#equipe">Nossa Equipe</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Polímeras EJ — Todos os direitos reservados.</p>
+    <p>Consultoria em Rotulagem & Cosméticos · Curitiba, PR</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const msg = document.getElementById('formMsg');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '✓ Proposta enviada!';
+      btn.style.background = '#25D366';
+      msg.textContent = 'Recebemos sua solicitação! Entraremos em contato em até 24h úteis.';
+      msg.style.display = 'block';
+      e.target.reset();
+    }, 1500);
+  }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 2px 30px rgba(0,0,0,0.5)';
+    } else {
+      nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+    }
+  });
+</script>
+</body>
+</html>
